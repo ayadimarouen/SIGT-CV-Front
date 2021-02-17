@@ -1,0 +1,60 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    text-align: justify;
+}
+
+.entete {
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.body {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+h1 {
+    color: darkviolet;
+    font-weight: bold;
+}
+
+h2 {
+    margin: 25px 0;
+    background-color: aqua;
+}
+
+h3 {
+    font-weight: bold;
+    text-align: center;
+}
+
+.right h2 {
+    width: 100%;
+}
+
+.left h2 {
+    width: 90%;
+}
+
+.title1 {
+    color: darkviolet;
+    font-weight: bold;
+}
+
+.title2 {
+    color: cadetblue;
+    font-weight: bold;
+}
+
+.photo img {
+    width: 150px;
+    height: 200px;
+    margin-top: -50%;
+}
+
+.download {
+    text-align: center;
+}
+

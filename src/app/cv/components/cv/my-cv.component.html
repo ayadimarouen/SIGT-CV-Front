@@ -1,0 +1,112 @@
+<p class="download">
+    <a href="../../../../assets/CV-de-Marouen-AYADI.pdf" target="_blank">
+        <i class="fa fa-download"></i>
+        Download CV (PDF)
+    </a>
+</p>
+<div class="container-fluid">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-8">
+            <div class="entete">
+                <h1>{{myCv?.fullName}}</h1>
+                <div class="photo float-right">
+                    <img src="../../assets/img-removebg-preview.png">
+                </div>
+                <div>
+                    <div>
+                        <p>
+                            {{myCv?.age}} ans
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <i class="fas fa-phone-alt"></i> {{myCv?.phone}}
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <i class="fas fa-envelope"></i> {{myCv?.email}}
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <i class="fas fa-map-marker"></i> {{myCv?.address}}
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <i class="fab fa-linkedin"></i> <a href={{myCv?.linkedin}} target="_blank"> Marouen
+                                Ayadi</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <h3>{{myCv?.title}}</h3>
+            <div class="container">
+                <div class="body row">
+                    <div class="col-4 left">
+                        <h2><i class="fas fa-comments"></i> Langues</h2>
+                        <div *ngFor="let lang of myCv?.languages; trackBy : trackLanguagesByLabel">
+                            <p>
+                                {{lang.label}} : {{lang.level}}
+                            </p>
+                        </div>
+                        <h2>
+                            <i class="fas fa-desktop"></i> Compétences
+                        </h2>
+                        <div *ngFor="let comp of myCv?.skills; trackBy : trackSkillsByLabel">
+                            <li>
+                                {{comp.label}}
+                            </li>
+                        </div>
+                        <h2>
+                            <i class="fas fa-user-clock"></i> intérêt
+                        </h2>
+                        <div *ngFor="let interest of myCv?.interests; trackBy : trackInterestByLabel">
+                            <p>
+                                {{interest.label}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-8 right">
+                        <h2>
+                            <i class="fas fa-briefcase"></i> Expériences Professionnelles
+                        </h2>
+                        <div>
+                            <div *ngFor="let expr of myCv?.experiences; trackBy : trackExperieceByTitle">
+                                <p class="title1">
+                                    {{expr.dateFrom | date: "mediumDate" }} - {{expr.dateTo | date:"mediumDate" }} :
+                                    {{expr.title}} - {{expr.company}}
+                                </p>
+                                <p class="title2">
+                                    Technologies et Framework :
+                                </p>
+                                {{expr.skills}}
+                                <p class="title2">
+                                    Missions :
+                                </p>
+                                <ul *ngFor="let tasks of expr?.tasks; trackBy : trackTaskByLabel">
+                                    - {{tasks.label}}
+                                </ul>
+                            </div>
+                            <h2>
+                                <i class="fas fa-graduation-cap"></i> Formations
+                            </h2>
+                            <div>
+                                <div *ngFor="let form of myCv?.educations; trackBy : trackLanguageByLabel">
+                                    <p class="title1">
+                                        {{form.dateFrom | date: "mediumDate" }} - {{form.dateTo | date:"mediumDate" }}
+                                        : {{form.institute}}
+                                    </p>
+                                    <p>
+                                        {{form.label}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
